@@ -3,9 +3,12 @@
     xmlns:cardView="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/picture_card"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="200dp"
     cardView:cardCornerRadius="5dp"
+    android:padding="10dp"
+    android:elevation="20dp"
+    android:layout_margin="10dp"
     android:layout_marginBottom="12dp">
 
     <FrameLayout
@@ -13,7 +16,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/pictureCardCentroEducativo"
+            android:id="@+id/logoCentroEducativo"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@drawable/bg_inmueble"
@@ -24,27 +27,31 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="bottom"
-            android:paddingLeft="32dp"
             android:paddingBottom="32dp"
+
             android:background="@color/backgroundtext_card">
 
             <TextView
                 android:id="@+id/nombreCentroEducativo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Departamento"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="Nombre del centro educativo"
+                android:gravity="center"
+                android:textStyle="bold"
                 android:textColor="@android:color/white"
                 android:textSize="25sp"/>
         </LinearLayout>
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/logoCentroEducativo"
+            android:id="@+id/logoCentroEducativo1"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginBottom="15dp"
             android:layout_marginEnd="15dp"
             android:layout_gravity="right|bottom"
-            tools:src="@drawable/ic_studi_alquiler_white"/>
+            tools:src="@drawable/ic_profile"/>
 
     </FrameLayout>
 

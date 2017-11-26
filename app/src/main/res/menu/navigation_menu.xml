@@ -8,6 +8,11 @@
             android:title="Lista de Inmuebles" />
 
         <item
+            android:id="@+id/nav_mis_inmuebles"
+            android:icon="@drawable/ic_rental"
+            android:title="Mis Inmuebles" />
+
+        <item
             android:id="@+id/nav_centros"
             android:icon="@drawable/ic_dash_board"
             android:title="Centros Educativos" />

@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/username_input"
+                    android:id="@+id/username_input_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/password_input"
+                    android:id="@+id/password_input_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/nombres_input"
+                    android:id="@+id/nombres_input_registert"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/apellidos_input"
+                    android:id="@+id/apellidos_input_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/correo_input"
+                    android:id="@+id/correo_input_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -112,7 +112,7 @@
                 android:layout_height="wrap_content">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/telefono_input"
+                    android:id="@+id/telefono_input_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -130,7 +130,7 @@
                 android:gravity="center_horizontal">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imagen_preview"
+                    android:id="@+id/imagen_preview_register"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:src="@drawable/ic_profile_black"/>
@@ -140,7 +140,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:text="Tomar Foto"
-                    android:onClick="takePicture"
+                    android:onClick="takePictureRegiter"
                     android:src="@drawable/ic_camera"/>
 
             </RelativeLayout>
@@ -150,7 +150,7 @@
                 android:layout_height="wrap_content"
                 android:text="Registrar"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:onClick="callRegister"/>
+                android:onClick="callRegisterAccount"/>
         </LinearLayout>
     </ScrollView>
 

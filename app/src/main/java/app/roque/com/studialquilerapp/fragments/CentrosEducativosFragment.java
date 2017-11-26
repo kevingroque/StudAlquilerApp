@@ -1,11 +1,16 @@
 package app.roque.com.studialquilerapp.fragments;
 
 
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +34,7 @@ public class CentrosEducativosFragment extends Fragment {
 
     private static final String TAG = CentrosEducativosFragment.class.getSimpleName();
     private RecyclerView centroList;
-
+    private SharedPreferences sharedPreferences;
 
     public CentrosEducativosFragment() {
         // Required empty public constructor
@@ -42,12 +47,19 @@ public class CentrosEducativosFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_centros_educativos, container, false);
 
-        centroList = (RecyclerView) view.findViewById(R.id.recyclerviewCentros);
-        centroList.setLayoutManager(new LinearLayoutManager(getContext()));
-        centroList.setAdapter(new CentrosEducativosAdapter(getActivity()));
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
 
+        centroList = (RecyclerView) view.findViewById(R.id.recyclerviewCentros);
+        centroList.setLayoutManager(new GridLayoutManager(getContext(),2));
+        centroList.setItemAnimator(new DefaultItemAnimator());
+        centroList.setAdapter(new CentrosEducativosAdapter(getActivity()));
         initialize();
         return view;
+    }
+
+    private int dpToPx(int dp){
+        Resources r = getResources();
+        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,r.getDisplayMetrics()));
     }
 
     private void initialize() {
@@ -94,5 +106,4 @@ public class CentrosEducativosFragment extends Fragment {
 
         });
     }
-
 }

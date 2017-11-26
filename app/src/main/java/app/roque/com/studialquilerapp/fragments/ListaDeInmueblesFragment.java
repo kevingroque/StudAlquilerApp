@@ -1,6 +1,7 @@
 package app.roque.com.studialquilerapp.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,9 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.github.clans.fab.FloatingActionButton;
+
 import java.util.List;
 
 import app.roque.com.studialquilerapp.R;
+import app.roque.com.studialquilerapp.activity.MapsInmueblesActivity;
 import app.roque.com.studialquilerapp.adapters.InmueblesAdapter;
 import app.roque.com.studialquilerapp.models.Inmueble;
 import app.roque.com.studialquilerapp.services.ApiService;
@@ -26,7 +30,7 @@ public class ListaDeInmueblesFragment extends Fragment {
 
     private static final String TAG = ListaDeInmueblesFragment.class.getSimpleName();
     private RecyclerView inmuebleList;
-
+    private FloatingActionButton fabGoMap;
 
     public ListaDeInmueblesFragment() {
         // Required empty public constructor
@@ -38,8 +42,18 @@ public class ListaDeInmueblesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lista_de_inmuebles,container, false);
         inmuebleList = (RecyclerView) view.findViewById(R.id.recyclerview);
+        fabGoMap = (FloatingActionButton)view.findViewById(R.id.fabGoMap);
+
         inmuebleList.setLayoutManager(new LinearLayoutManager(getContext()));
         inmuebleList.setAdapter(new InmueblesAdapter(getActivity()));
+
+        fabGoMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), MapsInmueblesActivity.class);
+                startActivity(intent);
+            }
+        });
 
         initialize();
         return view;

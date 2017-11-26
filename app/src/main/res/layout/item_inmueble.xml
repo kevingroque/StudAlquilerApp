@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cardView="http://schemas.android.com/apk/res-auto"
     android:id="@+id/picture_card"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="200dp"
     cardView:cardCornerRadius="5dp"
     android:layout_marginBottom="12dp">

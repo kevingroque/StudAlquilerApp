@@ -20,7 +20,7 @@ public class Inmueble {
     private String estado;
     private String descripcion;
     private String imagen;
-    private Integer user_id;
+    private Integer usuario_id;
     private Integer centro_educativo_id;
 
     public Integer getId() {
@@ -136,11 +136,11 @@ public class Inmueble {
     }
 
     public Integer getUser_id() {
-        return user_id;
+        return usuario_id;
     }
 
     public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+        this.usuario_id = user_id;
     }
 
     public Integer getCentro_educativo_id() {
@@ -168,7 +168,7 @@ public class Inmueble {
                 ", estado='" + estado + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", imagen='" + imagen + '\'' +
-                ", user_id=" + user_id +
+                ", user_id=" + usuario_id +
                 ", centro_educativo_id=" + centro_educativo_id +
                 '}';
     }

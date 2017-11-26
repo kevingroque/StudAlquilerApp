@@ -1,12 +1,15 @@
 package app.roque.com.studialquilerapp.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -24,6 +27,8 @@ public class CentroEducativoInmuebleActivity extends AppCompatActivity {
     private static final String TAG = CentroEducativoInmuebleActivity.class.getSimpleName();
     private RecyclerView inmuebleList;
     private Integer id;
+    private String imagen;
+    private ImageView imgHead;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +38,20 @@ public class CentroEducativoInmuebleActivity extends AppCompatActivity {
         showToolbar("Inmuebles",true);
 
         inmuebleList = (RecyclerView)findViewById(R.id.recyclerviewCentrosInmueble);
+        imgHead = (ImageView)findViewById(R.id.imageCentroInmueble);
+
         inmuebleList.setLayoutManager(new LinearLayoutManager(this));
         inmuebleList.setAdapter(new InmueblesAdapter(this));
 
         id = getIntent().getExtras().getInt("ID");
         Log.e(TAG, "id:" + id);
+
+        imagen = getIntent().getExtras().getString("IMAGEN");
+        Log.e(TAG, "imagem:" + imagen);
+
+        String url = ApiService.API_BASE_URL + "/images/centroseducativos/"+ imagen;
+        Picasso.with(this).load(url).into(imgHead);
+
 
         initialize();
     }

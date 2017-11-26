@@ -24,6 +24,7 @@ import com.squareup.picasso.Picasso;
 import app.roque.com.studialquilerapp.R;
 import app.roque.com.studialquilerapp.fragments.CentrosEducativosFragment;
 import app.roque.com.studialquilerapp.fragments.ListaDeInmueblesFragment;
+import app.roque.com.studialquilerapp.fragments.MisInmueblesFragment;
 import app.roque.com.studialquilerapp.fragments.ProfileFragment;
 import app.roque.com.studialquilerapp.services.ApiService;
 
@@ -108,6 +109,11 @@ public class NavDrawerActivity extends AppCompatActivity implements NavigationVi
             transaction.replace(R.id.content, fragment);
             transaction.commit();
 
+        }else if (id == R.id.nav_mis_inmuebles) {
+            MisInmueblesFragment fragment = new MisInmueblesFragment();
+            transaction.replace(R.id.content, fragment);
+            transaction.commit();
+
         } else if(id == R.id.nav_centros) {
             CentrosEducativosFragment fragment = new CentrosEducativosFragment();
             transaction.replace(R.id.content, fragment);
@@ -118,7 +124,7 @@ public class NavDrawerActivity extends AppCompatActivity implements NavigationVi
             startActivity(intent);
 
         } else if (id == R.id.nav_maps) {
-            Intent intent = new Intent(this, MapsActivity.class);
+            Intent intent = new Intent(this, MapsInmueblesActivity.class);
             startActivity(intent);
 
         } else if(id == R.id.nav_profile) {

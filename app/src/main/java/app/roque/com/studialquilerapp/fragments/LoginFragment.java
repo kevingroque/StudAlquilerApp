@@ -128,6 +128,9 @@ public class LoginFragment extends Fragment {
                         assert responseMessage !=null;
                         Integer usuario_id = responseMessage.getId();
                         String nombres = responseMessage.getNombres();
+                        String apellidos = responseMessage.getApellidos();
+                        String tipo = responseMessage.getTipo();
+                        String telefono = responseMessage.getTelefono();
                         String correo = responseMessage.getCorreo();
                         String imagen = responseMessage.getImagen();
 
@@ -141,6 +144,9 @@ public class LoginFragment extends Fragment {
                                 .putString("usuario_id", String.valueOf(usuario_id))
                                 .putString("username", username)
                                 .putString("nombres", nombres)
+                                .putString("apellidos", apellidos)
+                                .putString("tipo", tipo)
+                                .putString("telefono", telefono)
                                 .putString("correo", correo)
                                 .putString("imagen", imagen)
                                 .putBoolean("islogged", true)

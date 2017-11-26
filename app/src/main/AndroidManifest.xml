@@ -3,6 +3,11 @@
     package="app.roque.com.studialquilerapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT" />
+    <uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -13,9 +18,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_studi_alquiler"
+        android:icon="@drawable/ic_logo_studialquiler"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_studi_alquiler"
+        android:roundIcon="@drawable/ic_logo_studialquiler"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.IntroduccionActivity">
@@ -27,15 +32,22 @@
         </activity>
         <activity
             android:name=".activity.PrincipalActivity"
-            android:label=""
             android:theme="@style/AppTheme" />
         <activity android:name=".activity.SplashActivity" />
-        <activity android:name=".activity.CrearCuentaActivity" android:parentActivityName=".activity.PrincipalActivity">
+        <activity
+            android:name=".activity.CrearCuentaActivity"
+            android:parentActivityName=".activity.PrincipalActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.PrincipalActivity" />
         </activity>
-
+        <activity
+            android:name=".activity.CrearInmuebleActivity"
+            android:parentActivityName=".activity.NavDrawerActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.NavDrawerActivity" />
+        </activity>
         <activity
             android:name=".activity.DetalleInmuebleActivity"
             android:parentActivityName=".activity.PrincipalActivity">
@@ -59,14 +71,16 @@
             android:name=".activity.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".activity.NavDrawerActivity" />
-        <activity android:name=".activity.CrearInmuebleActivity" />
-
-        <activity android:name=".activity.CentroEducativoInmuebleActivity"
+        <activity
+            android:name=".activity.CentroEducativoInmuebleActivity"
             android:parentActivityName=".activity.PrincipalActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.PrincipalActivity" />
         </activity>
+        <activity
+            android:name=".activity.MapsInmueblesActivity"
+            android:label="@string/title_activity_maps_inmuebles"></activity>
     </application>
 
 </manifest>

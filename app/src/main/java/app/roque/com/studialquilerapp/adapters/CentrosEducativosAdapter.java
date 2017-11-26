@@ -37,13 +37,13 @@ public class CentrosEducativosAdapter extends RecyclerView.Adapter<CentrosEducat
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        public ImageView image;
+       // public ImageView image;
         public ImageView logo;
         public TextView nombreText;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            image = (ImageView) itemView.findViewById(R.id.pictureCardCentroEducativo);
+            //image = (ImageView) itemView.findViewById(R.id.pictureCardCentroEducativo);
             logo = (ImageView)itemView.findViewById(R.id.logoCentroEducativo);
             nombreText = (TextView)itemView.findViewById(R.id.nombreCentroEducativo);
         }
@@ -63,7 +63,7 @@ public class CentrosEducativosAdapter extends RecyclerView.Adapter<CentrosEducat
         viewHolder.nombreText.setText(centroEducativo.getNombre());
 
         String url = ApiService.API_BASE_URL + "/images/centroseducativos/" + centroEducativo.getImagen();
-        Picasso.with(viewHolder.itemView.getContext()).load(url).into(viewHolder.image);
+        //Picasso.with(viewHolder.itemView.getContext()).load(url).into(viewHolder.image);
 
         String urlLogo = ApiService.API_BASE_URL + "/images/centroseducativos/" + centroEducativo.getLogo();
         Picasso.with(viewHolder.itemView.getContext()).load(urlLogo).into(viewHolder.logo);
@@ -73,6 +73,7 @@ public class CentrosEducativosAdapter extends RecyclerView.Adapter<CentrosEducat
             public void onClick(View v) {
                 Intent intent = new Intent(activity, CentroEducativoInmuebleActivity.class);
                 intent.putExtra("ID", centroEducativo.getId());
+                intent.putExtra("IMAGEN", centroEducativo.getLogo());
                 activity.startActivity(intent);
             }
         });
